@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HS026YQ6D1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HS026YQ6D1');
+</script>
+  <title>19 Display</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0d0d0d;
+      font-family: 'Courier New', monospace;
+    }
+
+
+    #number {
+      font-size: 20vw;
+      color: #39ff14;
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      #number {
+        font-size: 35vw;
+      }
+    }
+
+    #loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle {
+      border: 6px solid #1a1a1a;
+      border-top: 6px solid #39ff14;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 600px) {
+      .circle {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="circle"></div>
+  </div>
+
+  <h1 id="number">19</h1>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('number').style.display = 'block';
+    }, 1000);
+  </script>
+</body>
+</html>
